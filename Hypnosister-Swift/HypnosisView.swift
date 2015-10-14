@@ -10,6 +10,8 @@ import UIKit
 
 class HypnosisView: UIView {
     
+    let logoImage = UIImage(named: "logo")
+    
     override required init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
@@ -34,6 +36,9 @@ class HypnosisView: UIView {
             path.addArcWithCenter(center, radius: radius, startAngle: 0.0, endAngle: CGFloat(M_PI) * 2.0, clockwise: true)
         }
         path.stroke()
+        
+        let imageRect = CGRectMake(bounds.origin.x + bounds.width/4, bounds.origin.y + bounds.height/4, bounds.width/2, bounds.height/2)
+        self.logoImage?.drawInRect(imageRect)
     }
 
 }
