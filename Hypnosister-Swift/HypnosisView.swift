@@ -38,7 +38,18 @@ class HypnosisView: UIView {
         path.stroke()
         
         let imageRect = CGRectMake(bounds.origin.x + bounds.width/4, bounds.origin.y + bounds.height/4, bounds.width/2, bounds.height/2)
+        
+        // Draw Drop Shadow
+        var currentContent = UIGraphicsGetCurrentContext()
+        
+        CGContextSaveGState(currentContent)
+        CGContextSetShadow(currentContent, CGSizeMake(4, 7), 3)
+        
         self.logoImage?.drawInRect(imageRect)
+        
+        CGContextRestoreGState(currentContent)
+        
+        
     }
 
 }
