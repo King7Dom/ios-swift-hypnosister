@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 class HypnosisView: UIView {
+    
+    var circleColor = UIColor.lightGrayColor()
     
     override required init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +30,7 @@ class HypnosisView: UIView {
         
         let path = UIBezierPath()
         path.lineWidth = 5
-        UIColor.lightGrayColor().setStroke()
+        self.circleColor.setStroke()
         
         for var radius = CGFloat(5); radius <= maxRadius; radius += 10 {
             path.moveToPoint(CGPoint(x: center.x + radius, y: center.y))
