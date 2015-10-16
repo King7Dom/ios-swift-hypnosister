@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let firstFrame = self.window!.bounds
         let firstView = HypnosisView(frame: firstFrame)
-        self.window?.addSubview(firstView)
+        self.window?.rootViewController?.view.addSubview(firstView)
         
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.makeKeyAndVisible()
