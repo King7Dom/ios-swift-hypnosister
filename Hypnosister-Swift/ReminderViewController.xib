@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReminderViewController" customModule="Hypnosister_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="f8y-fg-OSB" id="GXq-YO-NTI"/>
+                <outlet property="remindButton" destination="oDA-l5-JIj" id="tnP-0U-Okn"/>
+                <outlet property="view" destination="fTn-fO-UFc" id="4g6-pD-U2e"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fTn-fO-UFc">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="f8y-fg-OSB">
+                    <rect key="frame" x="0.0" y="192" width="600" height="216"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="216" id="dv7-IN-Pla"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="466760699.05716097">
+                        <!--2015-10-17 07:44:59 +0000-->
+                    </date>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDA-l5-JIj">
+                    <rect key="frame" x="252" y="416" width="96" height="34"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Remind me!"/>
+                    <connections>
+                        <action selector="addReminder:" destination="-1" eventType="touchUpInside" id="cZx-ho-7Fp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="oDA-l5-JIj" firstAttribute="top" secondItem="f8y-fg-OSB" secondAttribute="bottom" constant="8" id="AOC-Za-q9v"/>
+                <constraint firstItem="oDA-l5-JIj" firstAttribute="centerX" secondItem="fTn-fO-UFc" secondAttribute="centerX" id="GoT-Zd-otQ"/>
+                <constraint firstItem="f8y-fg-OSB" firstAttribute="leading" secondItem="fTn-fO-UFc" secondAttribute="leading" id="i1d-9n-l8N"/>
+                <constraint firstItem="f8y-fg-OSB" firstAttribute="centerY" secondItem="fTn-fO-UFc" secondAttribute="centerY" id="jiZ-Nw-sY1"/>
+                <constraint firstAttribute="trailing" secondItem="f8y-fg-OSB" secondAttribute="trailing" id="kAg-Ni-vB9"/>
+                <constraint firstItem="f8y-fg-OSB" firstAttribute="centerX" secondItem="fTn-fO-UFc" secondAttribute="centerX" id="nbh-aV-A4T"/>
+            </constraints>
+            <point key="canvasLocation" x="754" y="717"/>
+        </view>
+    </objects>
+</document>

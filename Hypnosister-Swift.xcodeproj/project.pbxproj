@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		187E23D21BD22FC100DE043E /* HypnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E23D11BD22FC100DE043E /* HypnosisViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		187E23D41BD231FC00DE043E /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E23D31BD231FC00DE043E /* ReminderViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		187E23D61BD2337B00DE043E /* ReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187E23D51BD2337B00DE043E /* ReminderViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		708B0FEF1BC41A0900DDF4FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B0FEE1BC41A0900DDF4FB /* AppDelegate.swift */; };
 		708B0FF61BC41A0900DDF4FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708B0FF51BC41A0900DDF4FB /* Assets.xcassets */; };
 		708B0FF91BC41A0900DDF4FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708B0FF71BC41A0900DDF4FB /* LaunchScreen.storyboard */; };
@@ -16,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		187E23D11BD22FC100DE043E /* HypnosisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HypnosisViewController.swift; sourceTree = "<group>"; };
+		187E23D31BD231FC00DE043E /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		187E23D51BD2337B00DE043E /* ReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderViewController.xib; sourceTree = "<group>"; };
 		708B0FEB1BC41A0900DDF4FB /* Hypnosister-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hypnosister-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		708B0FEE1BC41A0900DDF4FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		708B0FF51BC41A0900DDF4FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,12 +58,14 @@
 		708B0FED1BC41A0900DDF4FB /* Hypnosister-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				708B0FFA1BC41A0900DDF4FB /* Info.plist */,
 				708B0FEE1BC41A0900DDF4FB /* AppDelegate.swift */,
+				708B0FF51BC41A0900DDF4FB /* Assets.xcassets */,
 				708B10001BC41B4B00DDF4FB /* HypnosisView.swift */,
 				187E23D11BD22FC100DE043E /* HypnosisViewController.swift */,
-				708B0FF51BC41A0900DDF4FB /* Assets.xcassets */,
+				708B0FFA1BC41A0900DDF4FB /* Info.plist */,
 				708B0FF71BC41A0900DDF4FB /* LaunchScreen.storyboard */,
+				187E23D31BD231FC00DE043E /* ReminderViewController.swift */,
+				187E23D51BD2337B00DE043E /* ReminderViewController.xib */,
 			);
 			path = "Hypnosister-Swift";
 			sourceTree = "<group>";
@@ -123,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				708B0FF91BC41A0900DDF4FB /* LaunchScreen.storyboard in Resources */,
+				187E23D61BD2337B00DE043E /* ReminderViewController.xib in Resources */,
 				708B0FF61BC41A0900DDF4FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187E23D41BD231FC00DE043E /* ReminderViewController.swift in Sources */,
 				187E23D21BD22FC100DE043E /* HypnosisViewController.swift in Sources */,
 				708B0FEF1BC41A0900DDF4FB /* AppDelegate.swift in Sources */,
 				708B10011BC41B4B00DDF4FB /* HypnosisView.swift in Sources */,
