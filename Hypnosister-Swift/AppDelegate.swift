@@ -17,23 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = RootViewController()
-        
-        // Create UIScrollView
-        let viewFrame = self.window!.bounds
-        let scrollView = UIScrollView(frame: viewFrame)
-        scrollView.pagingEnabled = true
-        // Create HypnosisView as a subView in scrollView
-        scrollView.addSubview(HypnosisView(frame: viewFrame))
-        // Create another HypnosisView horizontally next to the first one
-        let secondOrigin = CGPoint(x: viewFrame.origin.x + viewFrame.size.width, y: viewFrame.origin.y)
-        let secondFrame = CGRect(origin: secondOrigin, size: viewFrame.size)
-        scrollView.addSubview(HypnosisView(frame: secondFrame))
-        // Set contentSize of scrollView to fit both HypnosisView
-        scrollView.contentSize = CGSize(width: viewFrame.size.width * 2, height: viewFrame.size.height)
-        
-        self.window?.rootViewController?.view.addSubview(scrollView)
-        
+        self.window?.rootViewController = HypnosisViewController()
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.makeKeyAndVisible()
         
