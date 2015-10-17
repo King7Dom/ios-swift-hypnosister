@@ -17,7 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = ReminderViewController(nibName: "ReminderViewController", bundle: NSBundle.mainBundle())
+        // HypnosisViewController
+        let hypnosisVC = HypnosisViewController()
+        // ReminderViewController
+        let reminderVC = ReminderViewController(nibName: "ReminderViewController", bundle: NSBundle.mainBundle())
+        // UITabBarContorller
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [hypnosisVC, reminderVC]
+
+        self.window?.rootViewController = tabBarController
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.makeKeyAndVisible()
         
