@@ -19,9 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = RootViewController()
         
-        let firstFrame = self.window!.bounds
-        let firstView = HypnosisView(frame: firstFrame)
-        self.window?.rootViewController?.view.addSubview(firstView)
+        // Create UIScrollView
+        let viewFrame = self.window!.bounds
+        let contentFrame = CGRect(origin: viewFrame.origin, size: CGSize(width: viewFrame.size.width * 2, height: viewFrame.size.height * 2))
+        let scrollView = UIScrollView(frame: viewFrame)
+        // Create HypnosisView as a subView in scrollView
+        scrollView.addSubview(HypnosisView(frame: contentFrame))
+        scrollView.contentSize = contentFrame.size
+        
+        self.window?.rootViewController?.view.addSubview(scrollView)
         
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.makeKeyAndVisible()
