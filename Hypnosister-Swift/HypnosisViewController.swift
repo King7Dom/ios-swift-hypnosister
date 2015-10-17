@@ -10,6 +10,17 @@ import UIKit
 
 class HypnosisViewController: UIViewController {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+        self.tabBarItem.title = "Hypnotize"
+        self.tabBarItem.image = UIImage(named: "hypno")
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
