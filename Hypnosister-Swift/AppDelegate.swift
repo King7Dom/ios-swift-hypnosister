@@ -21,11 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Create UIScrollView
         let viewFrame = self.window!.bounds
-        let contentFrame = CGRect(origin: viewFrame.origin, size: CGSize(width: viewFrame.size.width * 2, height: viewFrame.size.height * 2))
         let scrollView = UIScrollView(frame: viewFrame)
+        scrollView.pagingEnabled = true
         // Create HypnosisView as a subView in scrollView
-        scrollView.addSubview(HypnosisView(frame: contentFrame))
-        scrollView.contentSize = contentFrame.size
+        scrollView.addSubview(HypnosisView(frame: viewFrame))
+        // Create another HypnosisView horizontally next to the first one
+        let secondOrigin = CGPoint(x: viewFrame.origin.x + viewFrame.size.width, y: viewFrame.origin.y)
+        let secondFrame = CGRect(origin: secondOrigin, size: viewFrame.size)
+        scrollView.addSubview(HypnosisView(frame: secondFrame))
+        // Set contentSize of scrollView to fit both HypnosisView
+        scrollView.contentSize = CGSize(width: viewFrame.size.width * 2, height: viewFrame.size.height)
         
         self.window?.rootViewController?.view.addSubview(scrollView)
         
@@ -59,4 +64,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
