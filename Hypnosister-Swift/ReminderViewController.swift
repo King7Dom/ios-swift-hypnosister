@@ -36,7 +36,13 @@ class ReminderViewController: UIViewController {
     }
 
     @IBAction func addReminder(sender: UIButton) {
+        print("Reminder added")
 
+        let notification = UILocalNotification()
+        notification.alertBody = "Time to be hypnotized"
+        notification.fireDate = self.datePicker?.date
+
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
 }
