@@ -34,6 +34,12 @@ class ReminderViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.datePicker?.minimumDate = NSDate(timeIntervalSinceNow: 60)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
