@@ -13,6 +13,9 @@ class ReminderViewController: UIViewController {
     @IBOutlet private weak var datePicker: UIDatePicker?
     @IBOutlet private weak var remindButton: UIButton?
 
+
+// MARK: Initialization
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
@@ -24,10 +27,11 @@ class ReminderViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+
+// MARK: View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,9 +39,16 @@ class ReminderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func addReminder(sender: UIButton) {
-        print("Reminder added")
 
+// MARK: UIButton Delegate
+
+    @IBAction func addReminder(sender: UIButton) {
+
+        // Register Notification Settings
+        let notificationSettings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+
+        // Create Local Notification
         let notification = UILocalNotification()
         notification.alertBody = "Time to be hypnotized"
         notification.fireDate = self.datePicker?.date
