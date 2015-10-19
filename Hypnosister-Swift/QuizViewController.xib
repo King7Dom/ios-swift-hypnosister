@@ -31,8 +31,8 @@
                         <action selector="showQuestion:" destination="-1" eventType="touchUpInside" id="re9-aM-akF"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKG-UZ-LoE">
-                    <rect key="frame" x="8" y="168" width="584" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKG-UZ-LoE">
+                    <rect key="frame" x="8" y="167" width="584" height="30"/>
                     <animations/>
                     <state key="normal" title="Show Answer"/>
                     <connections>
@@ -40,7 +40,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0c-d6-PuQ">
-                    <rect key="frame" x="8" y="139" width="584" height="21"/>
+                    <rect key="frame" x="8" y="139" width="584" height="20"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
