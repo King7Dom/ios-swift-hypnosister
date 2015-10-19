@@ -21,9 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let hypnosisVC = HypnosisViewController()
         // ReminderViewController
         let reminderVC = ReminderViewController(nibName: "ReminderViewController", bundle: NSBundle.mainBundle())
+        // QuizViewController
+        let quizVC = QuizViewController(nibName: "QuizViewController", bundle: NSBundle.mainBundle())
         // UITabBarContorller
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [hypnosisVC, reminderVC]
+        tabBarController.viewControllers = [hypnosisVC, reminderVC, quizVC]
 
         self.window?.rootViewController = tabBarController
         self.window?.backgroundColor = UIColor.whiteColor()
