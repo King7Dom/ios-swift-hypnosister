@@ -9,8 +9,13 @@
 import UIKit
 
 class HypnosisViewController: UIViewController {
+    
+    let textField: UITextField
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        textField = UITextField()
+        textField.borderStyle = .RoundedRect
+        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.tabBarItem.title = "Hypnotize"
@@ -35,5 +40,17 @@ class HypnosisViewController: UIViewController {
         let hypnosisView = HypnosisView(frame: frame)
 
         self.view = hypnosisView
+        self.view.addSubview(textField)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        textField.sizeToFit()
+        
+        let bounds = self.view.bounds
+        let textFieldOrigin = CGPoint(x: 8.0, y: self.topLayoutGuide.length)
+        let textFieldSize = CGSize(width: bounds.size.width - 16.0, height: textField.frame.height)
+        textField.frame = CGRect(origin: textFieldOrigin, size: textFieldSize)
     }
 }
