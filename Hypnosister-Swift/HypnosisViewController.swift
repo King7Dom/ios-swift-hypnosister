@@ -12,9 +12,11 @@ class HypnosisViewController: UIViewController {
     
     let textField: UITextField
 
+
+    // MARK: Initialization
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         textField = UITextField()
-        textField.borderStyle = .RoundedRect
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
@@ -25,6 +27,9 @@ class HypnosisViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+
+    // MARK: View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +45,11 @@ class HypnosisViewController: UIViewController {
         let hypnosisView = HypnosisView(frame: frame)
 
         self.view = hypnosisView
+
+        textField.borderStyle = .RoundedRect
+        textField.placeholder = "Hypnotize me"
+        textField.returnKeyType = .Done
+        textField.delegate = self
         self.view.addSubview(textField)
     }
     
@@ -52,5 +62,13 @@ class HypnosisViewController: UIViewController {
         let textFieldOrigin = CGPoint(x: 8.0, y: self.topLayoutGuide.length)
         let textFieldSize = CGSize(width: bounds.size.width - 16.0, height: textField.frame.height)
         textField.frame = CGRect(origin: textFieldOrigin, size: textFieldSize)
+    }
+}
+
+extension HypnosisViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        print(textField.text)
+        return true
     }
 }
