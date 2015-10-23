@@ -63,12 +63,44 @@ class HypnosisViewController: UIViewController {
         let textFieldSize = CGSize(width: bounds.size.width - 16.0, height: textField.frame.height)
         textField.frame = CGRect(origin: textFieldOrigin, size: textFieldSize)
     }
+
+
+    // MARK:
+
+    func drawHypnoticMessages(message: String) {
+        for _ in 0...19 {
+            // Create messageLabel to display
+            let messageLabel = UILabel()
+            messageLabel.backgroundColor = UIColor.clearColor()
+            messageLabel.textColor = UIColor.whiteColor()
+            messageLabel.text = message
+            messageLabel.sizeToFit()
+
+            // Determine the origin of messageLabel
+            let width = self.view.bounds.width - messageLabel.bounds.width
+            let x = CGFloat(arc4random()) % width
+            let height = self.view.bounds.height - messageLabel.bounds.height
+            let y = CGFloat(arc4random()) % height
+
+            // Set frame with the determined origin
+            var frame = messageLabel.frame
+            frame.origin = CGPoint(x: x, y: y)
+            messageLabel.frame = frame
+
+            // Add messageLabel to view hierarchy
+            self.view.addSubview(messageLabel)
+        }
+    }
 }
 
 extension HypnosisViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        print(textField.text)
+
+        self.drawHypnoticMessages(textField.text!)
+        textField.text = ""
+        textField.resignFirstResponder()
+
         return true
     }
 }
