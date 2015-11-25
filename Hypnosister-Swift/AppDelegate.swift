@@ -12,7 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var hypnosisView: HypnosisView?
+    var scrollView: UIScrollView?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -21,18 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Create UIScrollView
         let viewFrame = self.window!.bounds
-        let scrollView = UIScrollView(frame: viewFrame)
-        scrollView.pagingEnabled = true
+        scrollView = UIScrollView(frame: viewFrame)
         // Create HypnosisView as a subView in scrollView
-        scrollView.addSubview(HypnosisView(frame: viewFrame))
-        // Create another HypnosisView horizontally next to the first one
-        let secondOrigin = CGPoint(x: viewFrame.origin.x + viewFrame.size.width, y: viewFrame.origin.y)
-        let secondFrame = CGRect(origin: secondOrigin, size: viewFrame.size)
-        scrollView.addSubview(HypnosisView(frame: secondFrame))
-        // Set contentSize of scrollView to fit both HypnosisView
-        scrollView.contentSize = CGSize(width: viewFrame.size.width * 2, height: viewFrame.size.height)
+        hypnosisView = HypnosisView(frame: viewFrame)
+        scrollView!.addSubview(hypnosisView!)
+
+        // Setup scrollView
+        scrollView!.contentSize = CGSize(width: viewFrame.size.width, height: viewFrame.size.height)
+        scrollView!.maximumZoomScale = 2.0
+        scrollView!.delegate = self
         
-        self.window?.rootViewController?.view.addSubview(scrollView)
+        self.window?.rootViewController?.view.addSubview(scrollView!)
         
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.makeKeyAndVisible()
@@ -67,5 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: UIScrollViewDelegate
 
 extension AppDelegate: UIScrollViewDelegate {
-    
+
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        if let hypnosisView = hypnosisView where scrollView.subviews.contains(hypnosisView) {
+            return hypnosisView
+        } else {
+            return nil
+        }
+    }
 }
